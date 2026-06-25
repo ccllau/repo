@@ -1,0 +1,146 @@
+:root {
+    --neon-blue: #00d2ff;
+    --deep-blue: #4a7cff;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+html, body { height: 100%; margin: 0; padding: 0; overflow: hidden; background: #121212; }
+
+body {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fixed-header {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #121212;
+    z-index: 100;
+    padding-bottom: 5px;
+    flex-shrink: 0;
+}
+
+/* 카테고리 메뉴 */
+.menu { 
+    display: flex; 
+    gap: 10px; 
+    margin: 10px auto; 
+    background: var(--glass-bg); 
+    padding: 5px 15px; 
+    border-radius: 50px; 
+    border: 1px solid var(--glass-border);
+    width: fit-content;
+}
+
+.menu button { 
+    width: 65px; 
+    background: #0a0a0a; 
+    color: #444; 
+    padding: 5px 0; 
+    border-radius: 20px; 
+    font-size: 11px; 
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+}
+
+.menu button.active { 
+    background: #003366 !important; 
+    color: var(--neon-blue) !important; 
+    border: 1px solid var(--neon-blue); 
+    box-shadow: 0 0 12px rgba(0, 210, 255, 0.4);
+}
+
+/* 플레이어 카드 구역 (높이 축소) */
+.player-card {
+    width: 92%;
+    background: none;
+    text-align: center;
+    padding: 5px 0; /* 상하 여백 축소 */
+}
+
+/* 곡명 디자인 */
+.song-info .title { 
+    font-size: 14px; 
+    font-weight: bold; 
+    margin-bottom: 5px;
+    color: var(--neon-blue);
+}
+
+.time-display { 
+    font-size: 11px; 
+    font-family: 'Consolas', monospace; 
+    color: #777;
+    margin-bottom: 5px;
+}
+
+/* 프로그레스 바 */
+.progress-container { width: 100%; margin-bottom: 10px; cursor: pointer; }
+.progress-bg { height: 2px; background: rgba(255, 255, 255, 0.1); }
+.progress-fill { width: 0%; height: 100%; background: var(--neon-blue); }
+
+/* 컨트롤 버튼 구역 (높이 20% 축소 적용) */
+.controls { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 12px; 
+    padding: 5px 0; /* 패딩 축소 */
+}
+
+.btn-nav {
+    background: #1a1a1a;
+    color: #888;
+    border: 1px solid #222;
+    border-radius: 30px;
+    padding: 5px 12px;
+    font-size: 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-play-box { 
+    border: 1.5px solid var(--neon-blue); 
+    border-radius: 50%; 
+    width: 38px; height: 38px; /* 크기 축소 */
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    background: #0a0a0a;
+}
+
+#btnIcon { font-size: 16px !important; color: var(--neon-blue); }
+
+/* 리스트 영역 */
+.playlist-wrapper { 
+    flex: 1; 
+    width: 100%;
+    max-width: 450px; 
+    overflow-y: auto; 
+    background: rgba(0,0,0,0.4); 
+    border-radius: 20px 20px 0 0;
+}
+
+.playlist-table { width: 100%; border-collapse: collapse; }
+.playlist-table td { 
+    padding: 12px 20px; 
+    font-size: 14px; 
+    border-bottom: 1px solid rgba(255,255,255,0.02); 
+    color: #888; 
+    cursor: pointer; 
+    text-align: left;
+}
+
+.playlist-table tr.playing td { 
+    color: var(--neon-blue); 
+    background: rgba(0, 210, 255, 0.08); 
+    font-weight: bold;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>mpplay - Compact</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="fixed-header">
+    <div class="menu">
+        <button id="old" onclick="loadCategory('old')">OLD</button>
+        <button id="enka" onclick="loadCategory('enka')">ENKA</button>
+        <button id="jazz" onclick="loadCategory('jazz')">JAZZ</button>
+    </div>
+
+    <div class="player-card">
+        <div class="song-info"><div class="title" id="labelTitle">곡을 선택해 주세요</div></div>
+        <div class="status-row">
+            <div class="time-display"><span id="curTime">00:00</span> / <span id="durTime">00:00</span></div>
+        </div>
+        <div class="progress-container" id="progArea">
+            <div class="progress-bg"><div class="progress-fill" id="progFill"></div></div>
+        </div>
+        <div class="controls">
+            <button class="btn-nav" id="btnPrev">⏮ 이전</button>
+            <div class="btn-play-box" id="btnPlayWrap"><span id="btnIcon">▶</span></div>
+            <button class="btn-nav" id="btnNext">다음 ⏭</button>
+            <button class="btn-nav" id="btnRandom" onclick="randomSong()">랜덤</button>
+        </div>
+    </div>
+</div>
+
+<div class="playlist-wrapper" id="scrollContainer">
+    <table class="playlist-table" id="listTable">
+        </table>
+</div>
+
+<script src="player.js"></script>
+<script>
+    window.onload = function() { loadCategory('old'); };
+</script>
+</body>
+</html>
